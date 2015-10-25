@@ -33,4 +33,6 @@ _site/
 .sass-cache/
 *.css.map
 
-/
+_site
+.idea
+node_modules
