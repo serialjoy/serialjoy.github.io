@@ -1,0 +1,23 @@
+mixin nav-content()
+	ul
+		li: a(href="#about") About
+		li: a(href="#horatiu") Horatiu
+		li: a(href="#crama") Crama
+		li: a(href="#Mama") Mama
+
+.mobile-navigation
+	+nav-content()
+
+
+header
+	.header-position
+		h1.logo GrammaWines
+
+		nav.site-nav
+			+nav-content()
+
+		a(href="mailto:office@grammawines.ro").email-link +emailus
+
+		.mobile-navigation-toggle
+			.bar
+

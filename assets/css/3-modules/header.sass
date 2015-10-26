@@ -1,0 +1,151 @@
+.home-wrap 
+	header 
+		width: 135px
+		background: white
+		padding: 30px 0
+		
+		.header-position
+			position: fixed
+			top: 30px
+			left: 0
+			bottom: 30px
+			width: 135px
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+
+		.logo 
+			+hide-text
+			max-width: 135px
+			background:
+				image: url(/assets/img/grammaLogo.svg)
+				repeat: no-repeat
+				position: center
+				size: contain
+			height: 60px
+			padding: 0px
+			margin: 0px
+		
+		.site-nav
+			ul 
+				list-style: none
+				margin: 20px 0
+				padding: 0 50px 0 0
+				text-align: right
+
+			li
+				margin-bottom: 10px
+				font-size: 12px
+
+				&:last-child
+					margin-bottom: 0
+
+		.email-link
+			display: block
+			text-align: right
+			padding-right: 50px
+
+		
+
+		.mobile-navigation-toggle
+			display: none
+			width: 40px
+			height: 32px
+			margin-right: 20px
+			align-items: center
+			cursor: pointer
+
+			.bar,
+			.bar:after,
+			.bar:before
+				width: 32px
+				height: 2px
+				position: absolute
+				display: block
+
+			.bar
+				transform: translateY(14px)
+				background: rgba(0, 0, 0, 1)
+				transition: all 0ms 300ms
+
+				&.animate
+					background: rgba(0, 0, 0, 0)
+
+			.bar:before
+				content: ""
+				bottom: 10px
+				background: rgba(0, 0, 0, 1)
+				transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+			
+			.bar:after
+				content: ""
+				top: 10px
+				background: rgba(0, 0,0, 1)
+				transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
+			.bar.animate:after
+				top: 0
+				transform: rotate(45deg)
+				transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+
+			.bar.animate:before
+				bottom: 0
+				transform: rotate(-45deg)
+				transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+		
+	// Mobile Navigation
+
+	.mobile-navigation
+		display: none
+		position: absolute
+		width: 100%
+		background: white
+		padding: 30px 0 20px 
+		transform: translateY(-100%)
+		transition: all 0.3s ease-in-out
+
+		ul
+			list-style: none
+			margin: 0
+			padding: 0
+		li
+			text-align: center
+			margin-bottom: 10px
+
+
+
+
+
+
+@media (max-width: 775px)
+	.home-wrap 
+		header
+			width: auto
+			padding: 20px 0
+
+
+			.header-position
+				position: relative
+				width: auto
+				top: auto
+				bottom: auto
+				left: auto
+				flex-direction: row
+				align-items: center
+			
+			.site-nav,
+			.email-link
+				display: none
+
+			.logo
+				height: 60px
+
+			.mobile-navigation-toggle
+				display: flex
+		
+		.mobile-navigation.is-open
+			display: block
+			transform: translateY(0%)
+
+
+
