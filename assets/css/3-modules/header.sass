@@ -3,6 +3,9 @@
 		width: 135px
 		background: white
 		padding: 30px 0
+
+		a
+			font-size: 12px
 		
 		.header-position
 			position: fixed
@@ -96,13 +99,13 @@
 	// Mobile Navigation
 
 	.mobile-navigation
-		display: none
 		position: absolute
+		height: 100%
 		width: 100%
 		background: white
-		padding: 30px 0 20px 
+		padding: 200px 0 20px 
 		transform: translateY(-100%)
-		transition: all 0.3s ease-in-out
+		transition: transform 0.2s ease-in-out
 
 		ul
 			list-style: none
@@ -110,11 +113,18 @@
 			padding: 0
 		li
 			text-align: center
-			margin-bottom: 10px
-
-
-
-
+			margin-bottom: 50px
+			opacity: 0
+			transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1)
+			
+		.one 
+			transition-delay: 0ms,0ms
+		.two 
+			transition-delay: 100ms,100ms
+		.three 
+			transition-delay: 200ms,200ms
+		.four 
+			transition-delay: 300ms,300ms
 
 
 @media (max-width: 775px)
@@ -146,6 +156,10 @@
 		.mobile-navigation.is-open
 			display: block
 			transform: translateY(0%)
+			transition: transform 0.2s ease-in-out
+			li
+				opacity: 1
+
 
 
 
