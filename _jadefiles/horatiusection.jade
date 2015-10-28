@@ -1,0 +1,27 @@
+.pane
+	.pane__inner(style='background-color:#fff')
+		.pane-header.pane-header--horatiu
+			header.pane-header__heading
+				.pane-header__heading-inner
+					a.pane-header__overview-link.u-black(href='/', data-direction='prev') Înapoi
+					p.t-categoryTitle.pane-header__title Maestrul Horatiu
+			.svg-box
+				.box2
+					img.box2.show1(src='/assets/img/rosu.jpg')
+					img.box2.show2(src='/assets/img/rosuShow2.jpg')
+				.box1
+					{% include svg.html %}
+					
+			nav.pagination
+				.pagination__container
+					.pagination__inner
+						a.pagination__link.pagination__link--next(href='#')
+							.pagination__direction next
+							h3.pagination__title Crama
+
+.pane.pane--right
+	.pane__inner.pane__inner--content.pane__inner--article
+		.article
+		{% include article.html %}
+
+

@@ -1,0 +1,396 @@
+#outer-frame
+  width: auto
+  margin: 0 auto
+  display: block
+  height: 100%
+
+@media (min-width: 1024px)
+  #outer-frame, #page-content
+    overflow: hidden
+
+#page-content
+  height: 100%
+  padding: 0
+  min-height: 425px
+  display: block 
+
+
+
+//---------------------The main Pane(left one)
+.pane
+  height: 50%
+  min-height: 600px
+
+@media (min-width: 768px)
+  .pane
+    min-height: 600px
+
+@media (min-width: 1024px)
+  .pane 
+    left: 0
+    height: 100%
+    padding-right: 1px
+    position: absolute
+    top: 0
+    width: 50%
+    overflow: hidden
+
+
+//---------------------The right Pane
+.pane--right
+  
+
+@media (min-width: 1024px)
+  .pane--right
+    height: 100%
+    left: auto
+    right: 0
+
+
+
+//---------------------Pane logo
+.pane--logo 
+  background:
+    image: url(/assets/img/grammaLogo.svg)
+    repeat: no-repeat
+    position: top
+  display: none
+  height: 60px
+  left: 30px
+  position: absolute
+  top: 20px
+  width: 60px
+  z-index: 10
+
+@media (min-width: 1024px)
+  .pane--logo 
+    display: block
+    top: 30px
+    position: fixed
+
+//---------------------The inner Pane
+
+.article
+  display: block
+
+//---------------------The inner Pane
+.pane__inner
+  box-sizing: border-box
+  height: 650px
+//  overflow: hidden
+  -webkit-overflow-scrolling: touch
+  width: 100%
+
+@media (min-width: 1024px)
+  .pane__inner
+    height: 100%
+  .pane__inner--content
+    overflow-y: auto
+
+@media (max-width: 480px)
+  .pane__inner
+    height: 700px
+
+.pane__inner--article
+  padding: 40px 40px 0 40px
+  padding: 4rem 2.5rem 0 2.5rem
+
+
+
+
+//---------------------The a specific pane header --"panename" e.g. horatiu 
+//---------------------This way you can easily add backgrounds to panes 
+.pane-header--horatiu
+
+  //background-image: url(/assets/img/rosu.jpg)
+
+.svg-box
+  border 1px solid black
+  padding-top: 24px
+  position: relative
+  overflow: hidden
+  height: 490px
+
+
+.box1 
+  border: 0px solid red
+  position: absolute
+  width: 400px
+  left: 50%
+  margin-left: -200px
+  animation-name: MoveSignature
+  animation-delay: 0
+  animation-duration: 2s
+  animation-fill-mode: forwards
+  animation-iteration-count: 1
+  animation-timing-function: cubic-bezier(1,0,.98,.34)
+  transform: translateY(220px) translateX(-12px) scale(0.62)
+
+@keyframes MoveSignature
+  to
+    transform: translateY(220px) translateX(-12px) scale(0.62)
+
+.box2
+  border 1px solid red
+  position: absolute
+  width: 550px
+  left: 50%
+  margin-left: -275px
+  opacity: 0.5
+
+.box2
+  opacity: 0
+  animation-name: Show
+  animation-delay: 0s
+  animation-duration: 1s
+  animation-fill-mode: forwards
+  animation-iteration-count: 1
+  animation-timing-function: linear
+
+@keyframes Show
+  to
+    opacity: 1
+
+@media (max-width:400px)
+  img.box2.show1
+    display: none
+@media (min-width:401px)
+  img.box2.show2
+    display: none
+
+
+//---------------------The actual pane Header
+.pane-header
+  background-position: 50% 100%
+  background-repeat: no-repeat
+  background-size: contain
+  box-sizing: border-box
+  height: 100%
+  padding: 40px
+  padding: 2.5rem
+  width: 100%
+  position: relative
+
+@media (min-height: 700px) and (min-width: 1024px)
+  .pane-header
+    background-position: 50% 50%
+    padding-bottom: 55px
+    padding-bottom: 3.4375rem
+
+
+
+//---------------------The pane's heading
+
+.pane-header__heading
+  margin: -7px 113px auto
+  max-width: 75%
+
+@media (max-width:800px)
+  .pane-header__heading
+    max-width: 100%
+    margin: 0
+
+//---------------------The pane's heading inner
+.pane-header__heading-inner
+  max-width: 450px
+
+
+
+//---------------------Kind'of like a top navigation
+.pane-header__overview-link
+  position: relative
+  padding-left: 30px
+  display: inline-block
+  -webkit-font-smoothing: antialiased
+  font-size: 14px;
+  font-size: 0.875rem
+  cursor: pointer
+
+.pane-header__overview-link:before
+  border: 5px solid transparent
+  border-bottom-width: 6px
+  content: ''
+  height: 0
+  margin-top: -6px
+  position: absolute
+  top: 50%
+  width: 0
+
+.pane-header__overview-link:before 
+  border-right-color: #000
+  left: -3px
+
+.pane-header__overview-link:after 
+  background: #000
+  left: 7px
+
+.pane-header__overview-link:after 
+  background: #000
+  content: ''
+  height: 1px
+  margin-top: -1px
+  position: absolute
+  top: 50%
+  width: 12px
+
+@media (min-height: 700px) and (min-width: 1024px)
+  .article-header__overview-link 
+    left: 0
+    position: relative
+    top: 62px
+
+@media (max-width: 1023px) and (min-width: 834px), (min-width: 1668px)
+  .pane-header__overview-link
+    left: 0
+    margin-left: 0
+    margin-bottom: 0
+    position: relative
+    top: 0
+
+
+
+//---------------------Color Class
+.u-black
+  color: #000 !important
+
+
+//---------------------Header title
+@media (max-width: 1023px) and (min-width: 834px), (min-width: 1668px)
+  .pane-header__title 
+    padding-top: 0
+
+@media (min-height: 700px) and (min-width: 1024px)
+  .article-header__title 
+    padding-top: 60px
+    padding-top: 3.75rem
+
+
+
+//---------------------title of the category
+.t-categoryTitle
+  font-family: 'ProximaNova', 'Helvetica Neue', helvetica, arial, sans-serif
+  font-size: 36px
+  font-size: 2.25rem
+  -webkit-font-smoothing: antialiased
+  font-weight: bold
+  line-height: 1.1
+  margin: 10px 0 20px
+  margin: 0
+
+@media (min-width: 768px)
+  .t-categoryTitle
+    margin: 0
+
+@media (min-width: 1024px)
+  .t-categoryTitle
+    font-size: 36px
+    font-size: 2.25rem
+
+
+//---------------------category navigation
+
+.pagination
+  margin: 0 auto;
+  max-width: 100%;
+  box-sizing: border-box
+  position: absolute
+  display: block
+  height: 74px
+  left: 0
+  bottom: 0
+  width: 100%
+
+
+//---------------------pagination container
+.pagination__container 
+  box-sizing: border-box
+  width: 100%
+
+
+
+
+//---------------------pagination inner
+.pagination__inner
+  padding: 22px 40px
+
+
+//---------------------pagination link
+@media (min-height: 700px) and (min-width: 1024px)
+  .pagination__link--next
+    position: relative
+    padding-right: 30px
+
+.pagination__link--next
+  float: right
+  position: relative
+  padding-right: 30px
+
+.pagination__link
+  box-sizing: border-box
+  display: inline-block
+  -webkit-font-smoothing: antialiased
+
+
+//---------------------pagination before
+
+.pagination__link--next:before
+  right: 4px
+  margin-top: -10px
+  border: 8px solid transparent
+  content: ''
+  margin-top: -9px
+  position: absolute
+  top: 50%
+  border-left-color: #000
+
+//---------------------pagination after
+
+
+.pagination__link--next:after
+  right: 14px
+  background: #000
+  content: ''
+  height: 6px
+  margin-top: -4px
+  position: absolute
+  top: 50%
+  width: 12px
+
+
+//---------------------pagination direction
+.pagination__direction
+  position: relative
+  padding-right: 30px
+
+.pagination__direction
+  color: #000
+  font-size: 12px!important
+  text-transform: uppercase
+
+@media (min-height: 700px) and (min-width: 1024px)
+  .pagination__direction 
+      display: none
+
+
+//---------------------pagination title
+.pagination__title 
+  color: #000
+  font-size: 20px
+  font-weight: 600
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  padding-right: 5px
+  margin: 0
+
+@media (min-width: 1024px)
+  .pagination__title
+    display: block
+
+@media (min-height: 700px) and (min-width: 1024px)
+  .pagination__title
+    color: #000
+    font-size: 16px
+    font-size: 1rem
+    line-height: 30px
+    line-height: 1.875rem

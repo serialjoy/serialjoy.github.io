@@ -1,16 +1,45 @@
 .home-wrap
-  display: flex
-  min-height: 100vh
+	display: flex
+	min-height: 100vh
 
-  @media  (max-width: 775px)
-    display: block 
+	@media  (max-width: 775px)
+    	display: block 
   
 .home-sections
-	flex: 1
+	@include flex(1)
 
-	section.about
-		width: auto
-		margin: 50px 100px 
+	section 
+		padding: 50px 0
+
+	.flex 
+		display: flex
+		flex-direction: rows 
+		justify-content: center
+	
+	.col-1
+		max-width: auto
+		margin: 0 10px
+		display: block
+		flex-direction: column
+	.col-2
+		max-width: 600px
+
+// columns 
+
+
+
+@media(max-width: 640px )
+	.home-sections .flex 		
+			display: block
+			.col-1
+				width: auto
+				padding-left: 20px
+				svg#Logo-Defs
+					position: absolute
+			.col-2
+				width: auto	
+				padding-top: 40px
+				padding-left: 30px
 
 body
-  background-color: white
+	background-color: white
